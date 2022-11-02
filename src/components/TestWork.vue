@@ -82,7 +82,7 @@ export default {
       } else if (name === "qty") {
         this.amount = parseValue * this.price;
       } else {
-        const lastInput = this.history.find(
+        const lastInput = this.history.sort((a, b) => b.date - a.date).find(
           (item) =>
             item.type === "input" &&
             (item.name === "price" || item.name === "qty")
